@@ -15,7 +15,26 @@ machine you use. Hiwthi is part of [Waco](https://github.com/waco-org/waco).
 3. Put the dotfiles you want managed in a `files/` directory, at their path under your home
    (`files/.hgrc` becomes `~/.hgrc`). `examples/` has a few to copy from; Hiwthi never
    reads it.
-4. On each machine: `hiwthi init <your repo>`. Later, `hiwthi update` pulls and applies.
+4. On each machine: `hiwthi init <your repo>` (add `-branch NAME` for a branch, see
+   below). It clones your repo into `~/.local/share/hiwthi/repo` and applies it. Later,
+   `hiwthi update` pulls and applies.
+
+When `hiwthi apply` replaces a file in your home that differs from your repo's copy, it
+saves the old one first, under `~/.local/state/hiwthi/backup/<date-time>/`.
+
+## Secrets
+
+A file in `files/` whose name ends in `.age` is encrypted with
+[age](https://age-encryption.org/): Hiwthi decrypts it on the way, writes it without the
+suffix and makes it readable only by you (`files/.pypirc.age` becomes `~/.pypirc`).
+
+- Make a key once: `age-keygen -o key.txt`. It prints the public key (`age1…`).
+- Encrypt with the public key: `age -r age1… -o files/.pypirc.age ~/.pypirc`. Commit the
+  `.age` file only, never the plain one.
+- On each machine that should have the secrets, copy `key.txt` **by hand** to
+  `~/.config/hiwthi/key.txt` (mode 0600). **Never put the key in the repo.**
+
+Machines without the key get everything else; the encrypted files are skipped.
 
 ## The two files
 
