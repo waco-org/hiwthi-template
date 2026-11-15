@@ -1,0 +1,8 @@
+---
+# Hiwthi: what this branch adds to common.yml, for a kind of system or one
+# machine. Committed like common.yml: "local" to the branch, not an untracked
+# file. Leave it empty on main, so merges never conflict.
+#
+# Same names as in common.yml. A single value here replaces common.yml's, a
+# list is added to common.yml's (duplicates dropped) and a dictionary is
+# merged key by key.

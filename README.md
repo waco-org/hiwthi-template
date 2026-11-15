@@ -12,7 +12,7 @@ machine you use. Hiwthi is part of [Waco](https://github.com/waco-org/waco).
    template"; elsewhere, clone it and change `origin`). From then on it's yours.
 2. Fill in `common.yml`: every section is commented out, so nothing is managed until you
    uncomment it.
-3. Put the dotfiles you want managed in `files/`, at their path under your home
+3. Put the dotfiles you want managed in a `files/` directory, at their path under your home
    (`files/.hgrc` becomes `~/.hgrc`). `examples/` has a few to copy from; Hiwthi never
    reads it.
 4. On each machine: `hiwthi init <your repo>`. Later, `hiwthi update` pulls and applies.
@@ -30,3 +30,8 @@ When both set the same thing, `local.yml` wins for a single value, lists are joi
 not remove from it.
 
 There are no conditionals: settings for tools a machine doesn't have are skipped.
+
+## Licence
+
+[0BSD](LICENSE): do anything you like with your copy, no notice required. Hiwthi itself is
+GPL-3.0.

@@ -1,0 +1,65 @@
+---
+# Hiwthi: what every home made from this repo gets.
+#
+# Every section is commented out: uncomment what you want Hiwthi to manage.
+# What a branch (a kind of system, or one machine) adds goes in local.yml.
+#
+# There are no conditionals: settings for tools a machine doesn't have are
+# skipped (`hiwthi apply --verbose` warns about them).
+
+# The version of this file's format. Leave it as it is.
+hiwthi: 1
+
+# Written into ~/.config/hiwthi/gitconfig and hgrc, which ~/.gitconfig and
+# ~/.hgrc include, where git and Mercurial are installed. If you keep your
+# own .gitconfig or .hgrc in files/, add the include line to it
+# (`hiwthi check` tells you if it's missing).
+# identity:
+#   name: Your Name
+#   email: you@example.org
+
+# shell:
+#   # Shells Hiwthi hooks into: one marked line in each startup file, which
+#   # sources ~/.config/hiwthi/env.sh and interactive.sh.
+#   shells: [bash]
+#   editing_mode: emacs        # or vi
+#   # Added to PATH in this order, ahead of the system's; directories that
+#   # don't exist when the shell starts are left out.
+#   path:
+#     - ~/.local/bin
+#   # Added after the system's.
+#   path_append: []
+#   # Values starting with / or ~ that don't exist are left out, as for path.
+#   environment: {}
+#   aliases: {}
+#   # Anything with no setting here goes in files/.config/hiwthi/local.bash
+#   # or local.zsh, sourced last (see examples/).
+
+# Per-user tools through mise, with their versions.
+# tools:
+#   gh: latest
+
+# Python versions and tools through uv.
+# python:
+#   versions: ["3.14"]
+#   tools: [tox]
+
+# Per-user Flatpaks from Flathub.
+# flatpaks: []
+
+# gnome:
+#   # Extensions enabled for you; those not installed system-wide are
+#   # installed for you from extensions.gnome.org.
+#   extensions: []
+#   # The dash, in this order (a branch can only add at the end).
+#   favorites: []
+#   # Started at login.
+#   autostart: []
+#   # Applications by MIME type or URL scheme.
+#   default_apps: {}
+#   #   org.gnome.TextEditor.desktop: [text/plain]
+#   # By schema and key, as gsettings names them; values in plain YAML.
+#   # Hiwthi skips schemas and keys this GNOME doesn't have.
+#   settings: {}
+#   #   org.gnome.desktop.interface:
+#   #     enable-hot-corners: false
