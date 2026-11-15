@@ -30,3 +30,8 @@ When both set the same thing, `local.yml` wins for a single value, lists are joi
 not remove from it.
 
 There are no conditionals: settings for tools a machine doesn't have are skipped.
+
+## Licence
+
+[0BSD](LICENSE): do anything you like with your copy, no notice required. Hiwthi itself is
+GPL-3.0.

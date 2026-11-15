@@ -7,7 +7,13 @@
 # There are no conditionals: settings for tools a machine doesn't have are
 # skipped (`hiwthi apply --verbose` warns about them).
 
-# Written into the configuration of git and Mercurial, where installed.
+# The version of this file's format. Leave it as it is.
+hiwthi: 1
+
+# Written into ~/.config/hiwthi/gitconfig and hgrc, which ~/.gitconfig and
+# ~/.hgrc include, where git and Mercurial are installed. If you keep your
+# own .gitconfig or .hgrc in files/, add the include line to it
+# (`hiwthi check` tells you if it's missing).
 # identity:
 #   name: Your Name
 #   email: you@example.org
